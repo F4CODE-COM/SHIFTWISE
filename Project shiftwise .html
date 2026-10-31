@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Shiftwise – Rencana Shift yang Lebih Sehat</title>
+<style>
+:root{--bg:#f8fafc;--on:#fff;--card:#fff;--ink:#1e293b;--mut:#64748b;--navy:#0f766e;--teal:#14b8a6;--line:#e2e8f0;--soft:#f1f5f9;--ok:#15803d;--okb:#dcfce7;--mid:#a16207;--midb:#fef9c3;--bad:#be123c;--badb:#ffe4e6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0b1220;--on:#0b1220;--card:#111c2e;--ink:#e2e8f0;--mut:#94a3b8;--navy:#2dd4bf;--teal:#2dd4bf;--line:#22324a;--soft:#16233a;--ok:#4ade80;--okb:#14342a;--mid:#fbbf24;--midb:#3a2f12;--bad:#fb7185;--badb:#44202a}
+:root[data-theme="light"]{color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){color-scheme:dark;--bg:#0b1220;--on:#0b1220;--card:#111c2e;--ink:#e2e8f0;--mut:#94a3b8;--navy:#2dd4bf;--teal:#2dd4bf;--line:#22324a;--soft:#16233a;--ok:#4ade80;--okb:#14342a;--mid:#fbbf24;--midb:#3a2f12;--bad:#fb7185;--badb:#44202a}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--ink);font:16px/1.55 "Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#0f172a;z-index:60}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px;width:100%}
+header.top{background:#0f172a;color:#fff;position:sticky;top:env(safe-area-inset-top,0px);z-index:50;border-bottom:1px solid #1e293b;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:12px;background:none;border:0;color:#fff;text-align:left;padding:0}
+.logo{background:linear-gradient(135deg,#14b8a6,#f43f5e);padding:8px;border-radius:12px;display:grid;place-items:center;box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.bn{font-weight:800;font-size:20px;letter-spacing:-.01em;background:linear-gradient(90deg,#2dd4bf,#6ee7b7,#fb7185);-webkit-background-clip:text;background-clip:text;color:transparent;display:block;line-height:1.2}
+.bs{font-size:12px;color:#94a3b8;display:block}
+.tag{font-size:10px;font-weight:700;background:#134e4a;color:#5eead4;border:1px solid #0f766e;border-radius:99px;padding:1px 8px;margin-left:6px;vertical-align:middle;-webkit-text-fill-color:#5eead4}
+nav{display:flex;gap:4px}
+nav button{background:none;border:0;color:#cbd5e1;padding:8px 12px;border-radius:8px;font-size:14px;font-weight:500}
+nav button:hover{background:#1e293b;color:#fff}
+nav button[aria-current="page"]{background:#1e293b;color:#2dd4bf}
+.menubtn{display:none;background:none;border:0;color:#cbd5e1;font-size:24px;padding:6px 10px;border-radius:8px}
+.hero{background:linear-gradient(90deg,#0f172a,#042f2e,#0f172a);color:#fff;border-bottom:1px solid #1e293b;padding:14px 0}
+.herow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.hero h1{font-size:15px;font-weight:600;color:#5eead4;display:flex;align-items:center;gap:8px}
+.hero p{font-size:12px;color:#cbd5e1;margin-top:2px}
+.dot{width:8px;height:8px;border-radius:50%;background:#34d399;flex:none}
+@media (prefers-reduced-motion:no-preference){.dot{animation:pg 1.6s infinite}}
+@keyframes pg{50%{opacity:.3}}
+.chip2{font-size:12px;color:#5eead4;background:#1e293bcc;border:1px solid #334155;border-radius:8px;padding:6px 10px;font-weight:600}
+main{flex:1;width:100%;max-width:960px;margin:0 auto;padding:24px 16px 32px}
+footer{background:#0f172a;color:#94a3b8;border-top:1px solid #1e293b;margin-top:24px;font-size:13px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 2fr;gap:24px;padding-top:28px;padding-bottom:20px}
+footer h4{margin:0 0 8px;color:#e2e8f0;font-size:13px}
+footer .fb{color:#e2e8f0;font-weight:800;font-size:16px;display:block;margin-bottom:6px}
+footer p{margin:0}
+footer .fl button{background:none;border:0;color:#94a3b8;padding:3px 0;display:block;text-align:left;font-size:13px}
+footer .fl button:hover{color:#2dd4bf}
+.copy{border-top:1px solid #1e293b;text-align:center;font-size:11px;color:#64748b;padding:14px 16px}
+h1,h2,h3{margin:0;line-height:1.25}
+h2{font-size:22px;font-weight:700}h3{font-size:15px;font-weight:600}
+p{margin:0}
+.mut{color:var(--mut);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px;box-shadow:0 1px 2px rgba(15,23,42,.05)}
+button{font:inherit;cursor:pointer}
+.btn{background:var(--navy);color:var(--on);border:0;border-radius:10px;padding:12px 16px;font-weight:600;width:100%}
+.btn:hover{filter:brightness(1.1)}
+.btn.alt{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.row{display:flex;gap:10px}.row>*{flex:1}
+label{display:block;font-weight:600;font-size:13px;margin-top:14px;color:var(--mut)}
+input,select{width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit;font-size:14px}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;font-size:12px;font-weight:700}
+.b-Rendah{background:var(--okb);color:var(--ok)}.b-Sedang{background:var(--midb);color:var(--mid)}.b-Tinggi{background:var(--badb);color:var(--bad)}
+.back{background:none;border:0;color:var(--navy);font-weight:600;padding:0 0 10px}
+.splash{text-align:center;padding:40px 10px 10px;max-width:420px;margin:0 auto}
+.splash h1{font-size:36px;font-weight:800;color:var(--navy);margin-top:10px}
+.gauge{display:flex;align-items:center;gap:16px}
+.ring{--v:0;width:92px;height:92px;border-radius:50%;background:conic-gradient(var(--c,var(--line)) calc(var(--v)*1%),var(--line) 0);display:grid;place-items:center;flex:none}
+.ring b{width:70px;height:70px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:24px}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:14px}
+.menu button{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;color:var(--ink);box-shadow:0 1px 2px rgba(15,23,42,.05)}
+.menu button:hover{border-color:var(--teal)}
+.menu b{display:block}
+.chart{display:flex;align-items:flex-end;gap:12px;height:190px;margin-top:10px;border-bottom:1px solid var(--line);padding-top:10px}
+.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font-size:12px;text-align:center}
+.bar i{display:block;width:100%;max-width:80px;border-radius:8px 8px 0 0;min-height:3px}
+.bar span{font-weight:700;margin-bottom:3px}
+.c-Rendah{background:#10b981}.c-Sedang{background:#f59e0b}.c-Tinggi{background:#e11d48}
+.best{border-color:var(--ok);background:var(--okb)}
+.tabs{display:flex;background:var(--soft);border-radius:10px;padding:3px}
+.tabs button{flex:1;border:0;background:none;padding:8px;border-radius:8px;color:var(--mut);font-weight:600}
+.tabs button[aria-selected="true"]{background:var(--navy);color:var(--on)}
+.item{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:8px;color:var(--ink)}
+button.item:hover{border-color:var(--teal)}
+ul.tips{margin:8px 0 0;padding-left:20px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:8px}
+summary{font-weight:600;cursor:pointer}
+details p{margin-top:8px;font-size:14px;color:var(--mut)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{padding:7px 4px;border-bottom:1px solid var(--line);text-align:left}
+code{background:var(--soft);padding:1px 5px;border-radius:5px;font-size:.9em}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--navy);color:var(--on);padding:10px 16px;border-radius:10px;font-size:14px;z-index:80}
+.brk{position:fixed;left:12px;right:12px;bottom:20px;max-width:520px;margin:0 auto;background:#f59e0b;color:#1c1917;border-radius:14px;padding:14px 16px;z-index:90;display:flex;gap:12px;align-items:center;justify-content:space-between;box-shadow:0 8px 24px rgba(0,0,0,.3);font-weight:600}
+.brk button{background:#1c1917;color:#fff;border:0;border-radius:8px;padding:8px 14px;font-weight:600;flex:none}
+@media (max-width:720px){
+.menubtn{display:block}
+nav{display:none;position:absolute;left:0;right:0;top:100%;background:#1e293b;flex-direction:column;padding:8px 12px;border-bottom:1px solid #334155}
+nav.open{display:flex}
+nav button{text-align:left;padding:12px}
+.bs{display:none}
+.fgrid{grid-template-columns:1fr}
+}
+@media print{header,.hero,footer,.noprint{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap hd">
+<button class="brand" data-go="home" aria-label="Shiftwise, ke beranda"><span class="logo"><svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="120 44" stroke-linecap="round" transform="rotate(-70 32 32)"/><path d="M32 18v15" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M34 44c0-14 9-22 22-22 0 14-8 22-22 22z" fill="#fff" fill-opacity=".85"/></svg></span><span><span class="bn">SHIFTWISE<span class="tag">Prototype</span></span><span class="bs">Rencana shift yang lebih sehat</span></span></button>
+<button class="menubtn" data-act="menu" aria-label="Buka menu" aria-expanded="false">&#9776;</button>
+<nav id="nav" aria-label="Menu utama"></nav></div></header>
+<section class="hero" id="hero"><div class="wrap herow"><div><h1><span class="dot"></span>Simulasi Risiko Jadwal Shift &amp; Pencegahan Kelelahan Kerja</h1><p>Evaluasi risiko kesehatan alternatif jadwal sebelum ditetapkan.</p></div><div class="chip2">Pengguna: Supervisor K3 &amp; Pekerja</div></div></section>
+<main id="view" tabindex="-1"></main>
+<footer><div class="wrap fgrid"><div><b class="fb">SHIFTWISE</b><p>Rencana shift yang lebih sehat. Membantu supervisor K3 dan pekerja membandingkan risiko kelelahan dari alternatif jadwal kerja sebelum jadwal ditetapkan.</p></div>
+<div class="fl"><h4>Menu</h4><button data-go="home">Beranda</button><button data-go="input">Input Jadwal</button><button data-go="riwayat">Riwayat</button><button data-go="info">Informasi</button><button data-go="metode">Metode &amp; sumber</button></div>
+<div><h4>Catatan</h4><p>Prototype pembelajaran. Skor adalah alat bantu membandingkan jadwal, bukan diagnosis kesehatan. Data tersimpan hanya di browser Anda.</p></div></div>
+<div class="copy">&copy; 2026 Shiftwise &middot; Proyek Teknologi Kesehatan Digital &middot; Dikembangkan untuk pencegahan kelelahan kerja dan peningkatan kesehatan pekerja.</div></footer>
+<script>
+var LOGO='<svg width="__S__" height="__S__" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="none" style="stroke:var(--navy)" stroke-width="6" stroke-dasharray="120 44" stroke-linecap="round" transform="rotate(-70 32 32)"/><path d="M32 18v15" style="stroke:var(--navy)" stroke-width="5" stroke-linecap="round"/><path d="M34 44c0-14 9-22 22-22 0 14-8 22-22 22z" fill="#2f9e86"/></svg>';
+var STORE='shiftwise.v1', H=[], alts=[], tab='semua', cur=null, started=false;
+try{H=JSON.parse(localStorage.getItem(STORE)||'[]')}catch(e){H=[]}
+function save(){try{localStorage.setItem(STORE,JSON.stringify(H))}catch(e){}}
+function clamp(x){return Math.max(0,Math.min(1,x))}
+/* Rumus dari dokumen Shiftwise: durasi 25, malam 30, jeda 25, kelelahan 20 */
+function rrDur(d){var P=[[8,1],[10,1.13],[12,1.27],[13,1.34]];if(d<=8)return 1;if(d>=13)return 1.34;for(var i=1;i<4;i++){if(d<=P[i][0]){var a=P[i-1],b=P[i];return a[1]+(b[1]-a[1])*(d-a[0])/(b[0]-a[0])}}}
+function rrNight(m){return m<1?1:1.36*[1,1.05,1.16,1.36][Math.min(m,4)-1]}
+function score(a){return Math.round(25*clamp((rrDur(a.dur)-1)/.34)+30*clamp((rrNight(a.night)-1)/.85)+25*clamp((11-a.gap)/5)+20*clamp((a.fat-1)/4))}
+function lvl(s){return s<34?'Rendah':s<67?'Sedang':'Tinggi'}
+function flags(a){var f=[];if(a.night>3)f.push('shift malam berturut-turut '+a.night+' hari (anjuran maks. 3)');if(a.gap<11)f.push('jeda antarshift '+a.gap+' jam (anjuran min. 11)');if(a.dur>9&&a.night>0)f.push('shift malam '+a.dur+' jam (anjuran maks. 9)');return f}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function opts(a,b,sel,u){var o='';for(var i=a;i<=b;i++)o+='<option'+(i==sel?' selected':'')+'>'+i+'</option>';return o}
+function badge(s){var l=lvl(s);return '<span class="badge b-'+l+'">'+l+'</span>'}
+function toast(m){var t=document.createElement('div');t.className='toast';t.textContent=m;t.setAttribute('role','status');document.body.appendChild(t);setTimeout(function(){t.remove()},2200)}
+function fmt(t){return new Date(t).toLocaleString('id-ID',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'})}
+
+var V={};
+V.splash=function(){return '<div class="splash">'+LOGO.replace(/__S__/g,110)+'<h1>Shiftwise</h1><p class="mut" style="font-size:16px">Rencana shift yang lebih sehat</p><p style="margin:36px 0 28px;color:var(--mut)">Analisis jadwal kerja untuk mengurangi risiko kelelahan dan menjaga kesehatan pekerja.</p><button class="btn" data-go="home">Mulai</button></div>'};
+V.home=function(){var l=H[0],s=l?l.best.score:null,lv=s==null?'':lvl(s);
+return '<div style="display:flex;align-items:center;gap:10px">'+LOGO.replace(/__S__/g,34)+'<div><h2>Halo, Supervisor</h2><p class="mut">Semoga hari ini tetap sehat dan produktif.</p></div></div>'+
+'<div class="card"><h3>Skor risiko saat ini</h3><div class="gauge" style="margin-top:10px"><div class="ring" style="--v:'+(s||0)+';--c:var(--'+(lv=='Rendah'?'ok':lv=='Sedang'?'mid':'bad')+')"><b>'+(s==null?'–':s)+'</b></div><div>'+(s==null?'<p class="mut">Belum ada analisis. Masukkan jadwal untuk mulai.</p>':badge(s)+'<p class="mut" style="margin-top:6px">Jadwal terbaik pada analisis terakhir: '+esc(l.best.name)+'</p>')+'</div></div></div>'+
+'<div class="menu"><button data-go="input"><b>Input jadwal</b><span class="mut">Masukkan data jadwal kerja</span></button><button data-go="input"><b>Simulasi risiko</b><span class="mut">Bandingkan beberapa alternatif</span></button><button data-go="riwayat"><b>Riwayat</b><span class="mut">Lihat analisis sebelumnya</span></button><button data-go="info"><b>Informasi</b><span class="mut">Edukasi kesehatan kerja</span></button></div>'};
+V.input=function(){var list=alts.map(function(a,i){return '<div class="item" style="cursor:default"><div><b>'+esc(a.name)+'</b><p class="mut">'+a.dur+' jam/hari · jeda '+a.gap+' jam · malam '+a.night+' hari · lelah '+a.fat+'</p></div><button class="back" style="padding:0" data-del="'+i+'" aria-label="Hapus '+esc(a.name)+'">Hapus</button></div>'}).join('');
+return '<h2>Input data jadwal</h2><p class="mut">Tambahkan dua alternatif jadwal atau lebih, lalu bandingkan.</p><div class="card" style="margin-top:12px">'+
+'<label for="f-name" style="margin-top:0">Nama jadwal</label><input id="f-name" placeholder="Contoh: Shift pagi – Produksi A" maxlength="40">'+
+'<label for="f-dur">Durasi kerja (jam/hari)</label><select id="f-dur">'+opts(4,14,8)+'</select>'+
+'<label for="f-gap">Jeda antarshift (jam)</label><select id="f-gap">'+opts(4,24,12)+'</select>'+
+'<label for="f-night">Shift malam berturut-turut (hari)</label><select id="f-night">'+opts(0,7,0)+'</select>'+
+'<label for="f-fat">Riwayat kelelahan (1–5)</label><select id="f-fat">'+opts(1,5,3)+'</select><p class="mut">1 = tidak pernah lelah, 5 = sangat sering lelah.</p>'+
+'<div class="row" style="margin-top:16px"><button class="btn alt" data-act="reset">Reset</button><button class="btn" data-act="add">Simpan</button></div></div>'+
+'<h3 style="margin-top:20px">Alternatif tersimpan ('+alts.length+')</h3>'+(list||'<p class="mut" style="margin-top:6px">Belum ada alternatif. Isi formulir lalu tekan Simpan.</p>')+
+'<button class="btn" style="margin-top:16px" data-act="run"'+(alts.length<1?' disabled':'')+'>Analisis dan bandingkan</button>'};
+V.hasil=function(){if(!cur)return V.home();var best=cur.best,tips=[];
+tips.push('Gunakan '+esc(best.name)+' sebagai jadwal utama.');
+if(best.night>3)tips.push('Pecah blok malam menjadi maksimal 3 hari berturut-turut.');
+if(best.gap<11)tips.push('Tambah jeda antarshift menjadi minimal 11 jam.');
+if(best.dur>9&&best.night>0)tips.push('Perpendek shift malam menjadi 9 jam atau kurang.');
+if(best.dur>8)tips.push('Jam kerja di atas 8 jam menaikkan risiko; pertimbangkan 8 jam jika memungkinkan.');
+if(best.fat>=4)tips.push('Kelelahan tinggi dilaporkan: tinjau beban kerja dan hari libur pemulihan.');
+if(tips.length==1)tips.push('Jadwal ini tidak melewati ambang anjuran.');
+var multi=cur.items.length>1,mx=Math.max.apply(null,cur.items.map(function(i){return i.score}))||1;
+return '<button class="back" data-go="home">← Kembali</button><h2>Hasil analisis</h2><p class="mut">'+fmt(cur.t)+'</p>'+
+'<div class="card best"><h3>'+(multi?'Rekomendasi jadwal terbaik':'Hasil jadwal')+'</h3><p style="margin-top:6px">'+(multi?'Pilih ':'')+'<b>'+esc(best.name)+'</b>'+(multi?', skor risiko terendah.':'.')+'</p><p style="font-size:32px;font-weight:700;margin-top:6px">'+best.score+'<span class="mut"> /100</span> '+badge(best.score)+'</p></div>'+
+'<div class="card"><h3>Perbandingan risiko setiap alternatif</h3><div class="chart" role="img" aria-label="Grafik batang skor risiko">'+cur.items.map(function(i){return '<div class="bar"><span>'+i.score+'</span><i class="c-'+lvl(i.score)+'" style="height:'+Math.max(3,i.score)+'%"></i></div>'}).join('')+'</div><div style="display:flex;gap:10px">'+cur.items.map(function(i){return '<div style="flex:1;font-size:12px;text-align:center;word-break:break-word;padding-top:4px">'+esc(i.name)+'</div>'}).join('')+'</div></div>'+
+'<div class="card"><h3>Rekomendasi</h3><ul class="tips">'+tips.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul></div>'+
+'<div class="card"><h3>Detail</h3><div style="overflow-x:auto"><table><tr><th>Jadwal</th><th>Jam</th><th>Jeda</th><th>Malam</th><th>Lelah</th><th>Skor</th></tr>'+cur.items.map(function(i){return '<tr><td>'+esc(i.name)+'</td><td>'+i.dur+'</td><td>'+i.gap+'</td><td>'+i.night+'</td><td>'+i.fat+'</td><td><b>'+i.score+'</b></td></tr>'}).join('')+'</table></div><p class="mut" style="margin-top:8px">Skor = durasi (maks 25) + malam berturut-turut (30) + jeda (25) + kelelahan (20). Rendah &lt; 34, Sedang 34–66, Tinggi ≥ 67. Dasar: Folkard &amp; Tucker 2003; Fischer dkk. 2017; Garde dkk. 2020. Bobot belum divalidasi; skor adalah alat bantu membandingkan, bukan diagnosis.</p></div>'};
+V.riwayat=function(){var body;
+if(tab=='semua'){body=H.length?H.map(function(h,i){return '<button class="item" data-open="'+i+'"><div><b>'+esc(h.best.name)+'</b><p class="mut">'+h.items.length+' alternatif · '+fmt(h.t)+'</p></div>'+badge(h.best.score)+'</button>'}).join(''):'<p class="mut" style="margin-top:12px">Belum ada riwayat. Lakukan analisis pertama dari menu Input jadwal.</p>'}
+else{var c={Rendah:0,Sedang:0,Tinggi:0},sum=0;H.forEach(function(h){c[lvl(h.best.score)]++;sum+=h.best.score});
+body=H.length?'<div class="card"><h3>Ringkasan laporan</h3><table><tr><td>Total analisis</td><td><b>'+H.length+'</b></td></tr><tr><td>Rata-rata skor jadwal terbaik</td><td><b>'+Math.round(sum/H.length)+'</b></td></tr><tr><td>Rendah / Sedang / Tinggi</td><td><b>'+c.Rendah+' / '+c.Sedang+' / '+c.Tinggi+'</b></td></tr></table><div class="row noprint" style="margin-top:12px"><button class="btn alt" data-act="print">Cetak</button><button class="btn alt" data-act="csv">Unduh CSV</button></div></div><button class="btn alt noprint" style="margin-top:12px" data-act="clear">Hapus semua riwayat</button>':'<p class="mut" style="margin-top:12px">Laporan akan muncul setelah ada analisis.</p>'}
+return '<h2 style="margin-bottom:12px">Riwayat &amp; Informasi</h2><div class="tabs" role="tablist"><button role="tab" aria-selected="'+(tab=='semua')+'" data-tab="semua">Semua</button><button role="tab" aria-selected="'+(tab=='laporan')+'" data-tab="laporan">Laporan</button></div>'+body+(tab=='semua'?infoList():'')};
+V.info=function(){return '<h2>Informasi</h2><p class="mut">Edukasi singkat kesehatan kerja.</p>'+advisor()+
+'<details'+op(0)+'><summary>Tips menjaga kesehatan kerja</summary><p>Jaga pola tidur 7–9 jam, sediakan waktu makan teratur, minum cukup air, dan manfaatkan jeda istirahat untuk bergerak ringan. Hindari kafein menjelang waktu tidur.</p></details>'+
+'<details'+op(1)+'><summary>Apa itu Shift Work Disorder?</summary><p>Gangguan tidur akibat jam kerja yang bertentangan dengan ritme tubuh. Gejalanya: sulit tidur, kantuk berlebihan saat bekerja, dan sulit berkonsentrasi. Jika berlangsung lama, konsultasikan dengan tenaga kesehatan.</p></details>'+
+'<details'+op(2)+'><summary>Panduan jadwal kerja sehat</summary><p>Anjuran konsensus pakar (Garde dkk., 2020): jeda minimal 11 jam antarshift, shift malam berturut-turut maksimal 3 hari, dan durasi shift malam maksimal 9 jam. Rotasi searah jarum jam (pagi → siang → malam) umumnya lebih mudah ditoleransi tubuh.</p></details>'+
+reminderCard()};
+
+function render(v){document.getElementById('view').innerHTML=V[v]();cur_v=v;var n=document.getElementById('nav');
+document.getElementById('hero').hidden=(v=='splash');
+var items=[['home','Beranda'],['input','Input Jadwal'],['riwayat','Riwayat'],['info','Informasi']];
+n.innerHTML=items.map(function(i){return '<button data-go="'+i[0]+'"'+(i[0]==v||(i[0]=='home'&&v=='hasil')?' aria-current="page"':'')+'>'+i[1]+'</button>'}).join('')+themeBtn();n.classList.remove('open');var mb=document.querySelector('.menubtn');if(mb)mb.setAttribute('aria-expanded','false');window.scrollTo(0,0)}
+function isDark(){var t=document.documentElement.getAttribute('data-theme');return t?t=='dark':window.matchMedia('(prefers-color-scheme:dark)').matches}
+function themeBtn(){var d=isDark();return '<button data-act="theme" aria-label="Ganti ke mode '+(d?'terang':'gelap')+'">'+(d?'☀ Terang':'☾ Gelap')+'</button>'}
+V.metode=function(){return '<button class="back" data-go="info">← Kembali</button><h2>Metode &amp; sumber</h2>'+
+'<div class="card"><h3>Cara skor dihitung</h3><p class="mut" style="margin-top:6px">Tiap faktor diberi nilai 0–1 (0 = aman, 1 = paling buruk), dikali bobot, lalu dijumlahkan menjadi skor 0–100. Makin tinggi, makin berisiko.</p><p style="margin-top:8px"><code>Skor = 25·durasi + 30·malam + 25·jeda + 20·kelelahan</code></p><div style="overflow-x:auto;margin-top:8px"><table><tr><th>Faktor</th><th>Nilai 0–1</th></tr><tr><td>Durasi</td><td>8 jam = 0; 10 jam = 0,38; 12 jam = 0,79; di atas 12 jam = 1</td></tr><tr><td>Malam berturut-turut</td><td>0 = 0; 1 = 0,42; 2 = 0,50; 3 = 0,68; 4 atau lebih = 1</td></tr><tr><td>Jeda antarshift</td><td>11 jam atau lebih = 0; kurang dari itu = (11 − jeda) ÷ 5; 6 jam atau kurang = 1</td></tr><tr><td>Kelelahan</td><td>(skor − 1) ÷ 4</td></tr></table></div><p class="mut" style="margin-top:8px">Label: Rendah di bawah 34, Sedang 34–66, Tinggi 67 ke atas. Contoh: 10 jam, jeda 9 jam, 4 malam, kelelahan 4 = 9,6 + 30 + 10 + 15 ≈ 65 (Sedang).</p></div>'+
+'<div class="card"><h3>Ambang peringatan</h3><p class="mut" style="margin-top:6px">Garde dkk. (2020) menganjurkan maksimal 3 malam berturut-turut, jeda minimal 11 jam, dan shift malam maksimal 9 jam. Ini rekomendasi konsensus pakar, bukan aturan hukum. Di Indonesia, PP 35/2021 mengatur waktu kerja normal 40 jam per minggu dan lembur maksimal 4 jam per hari serta 18 jam per minggu.</p></div>'+
+'<div class="card"><h3>Keterbatasan</h3><ul class="tips"><li>Bobot, kemiringan jeda, skala kelelahan, dan batas label belum divalidasi; perlu panel ahli atau data lapangan.</li><li>RR berasal dari studi cedera kerja; hasilnya hubungan statistik, bukan sebab-akibat individu.</li><li>Model tidak memakai jam mulai shift, beban kerja, usia, atau kondisi kesehatan.</li><li>Gunakan Shiftwise untuk membandingkan jadwal, bukan untuk membenarkan jadwal bermasalah.</li></ul></div>'+
+'<div class="card"><h3>Daftar sumber</h3><ul class="tips"><li>Folkard S, Tucker P. Shift work, safety and productivity. Occup Med. 2003;53(2):95–101.</li><li>Fischer D dkk. Updating the Risk Index. Chronobiol Int. 2017;34:1423–1438.</li><li>Garde AH dkk. How to schedule night shift work in order to reduce health and safety risks. Scand J Work Environ Health. 2020;46(6):557–569.</li><li>Spencer MB, Robertson KA, Folkard S. The development of a fatigue/risk index for shiftworkers. HSE Research Report 446. 2006.</li><li>Peraturan Pemerintah No. 35 Tahun 2021.</li></ul></div>'};
+var cur_v, infoOpen=0, adv={s:3,k:2,n:1,m:null};
+function op(i){return infoOpen==i?' open':''}
+function sel(id,list,v){return '<select id="'+id+'">'+list.map(function(x,i){return '<option value="'+(i+1)+'"'+(i+1==v?' selected':'')+'>'+x+'</option>'}).join('')+'</select>'}
+function infoList(){var t=[['Tips menjaga kesehatan kerja','Pola tidur, nutrisi, dan istirahat yang cukup.'],['Apa itu Shift Work Disorder?','Kenali gejala dan cara pencegahannya.'],['Panduan jadwal kerja sehat','Rekomendasi durasi dan pola shift yang aman.'],['Pesan untuk Anda','Saran singkat sesuai kondisi Anda hari ini.'],['Metode & sumber','Cara skor dihitung dan daftar pustaka.']];
+return '<h3 style="margin-top:22px">Informasi</h3>'+t.map(function(x,i){return '<button class="item" '+(i==4?'data-go="metode"':'data-info="'+(i>2?-1:i)+'"')+'><div><b>'+x[0]+'</b><p class="mut">'+x[1]+'</p></div><span aria-hidden="true">›</span></button>'}).join('')}
+function advisor(){var m=adv.m;return '<div class="card"><h3>Pesan untuk Anda</h3><p class="mut">Jawab tiga pertanyaan, lalu dapatkan saran singkat. Berbasis aturan sederhana, bukan diagnosis, dan tidak ada data yang dikirim ke server.</p>'+
+'<label for="a-sleep">Tidur semalam</label>'+sel('a-sleep',['Kurang dari 5 jam','5–6 jam','7 jam atau lebih'],adv.s)+
+'<label for="a-sl">Tingkat kantuk saat ini</label>'+sel('a-sl',['1 – Segar','2 – Cukup segar','3 – Sedang','4 – Mengantuk','5 – Sangat mengantuk'],adv.k)+
+'<label for="a-next">Shift berikutnya</label>'+sel('a-next',['Pagi','Siang','Malam'],adv.n)+
+'<button class="btn" style="margin-top:14px" data-act="advise">Beri saran</button>'+
+(m?'<div class="card best" role="status" style="margin-top:14px"><ul class="tips" style="margin:0">'+m.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>':'')+'</div>'}
+function buildAdvice(s,k,n){var m=[];
+m.push(s==1?'Tidur Anda kurang dari 5 jam. Jika bisa, tidur singkat 20–30 menit sebelum shift dan jangan mengemudi sendiri bila sangat mengantuk.':s==2?'Tidur Anda 5–6 jam, sedikit di bawah anjuran 7–9 jam. Usahakan tidur lebih awal hari ini.':'Waktu tidur Anda cukup. Pertahankan pola ini.');
+m.push(k>=4?'Kantuk Anda tinggi. Beri tahu supervisor, ambil istirahat singkat, minum air, bergerak ringan, dan hindari tugas berisiko tinggi sendirian.':k==3?'Kantuk sedang. Ambil jeda peregangan sekitar tiap 2 jam dan minum air cukup.':'Kondisi Anda segar. Tetap ambil istirahat sesuai jadwal.');
+m.push(n==3?'Shift malam: tidur siang di ruang gelap dan tenang, batasi kafein dalam 6 jam sebelum tidur, dan makan ringan saat bekerja.':n==2?'Shift siang: sarapan cukup dan hindari kafein menjelang sore agar tidur malam tetap baik.':'Shift pagi: tidur lebih awal malam ini dan hindari layar terang sebelum tidur.');
+if(s==1&&k>=4)m.push('Kombinasi kurang tidur dan kantuk tinggi meningkatkan risiko kecelakaan. Bicarakan dengan supervisor sebelum memulai tugas berisiko.');
+if(H[0]){var f=flags(H[0].best);m.push(f.length?'Jadwal terbaik dari analisis terakhir ('+esc(H[0].best.name)+') masih melewati ambang anjuran: '+f.join('; ')+'. Sampaikan ke supervisor K3.':'Jadwal dari analisis terakhir ('+esc(H[0].best.name)+') tidak melewati ambang anjuran.')}
+m.push('Saran ini bersifat edukasi umum. Jika keluhan berlanjut, hubungi tenaga kesehatan.');return m}
+function reminderCard(){var on=!!rem.tm,perm=('Notification' in window)?Notification.permission:'tidak tersedia';
+return '<div class="card"><h3>Pengingat waktu istirahat</h3><p class="mut" style="margin-top:4px">Pengingat muncul sebagai banner di layar (plus getar, bunyi, dan notifikasi browser bila diizinkan). Hanya aktif selama halaman ini terbuka.</p>'+
+'<label for="rm">Ingatkan setiap</label><select id="rm"'+(on?' disabled':'')+'>'+[[1,'1 menit (uji coba)'],[60,'1 jam'],[120,'2 jam'],[240,'4 jam']].map(function(o){return '<option value="'+o[0]+'"'+(o[0]==rem.m?' selected':'')+'>'+o[1]+'</option>'}).join('')+'</select>'+
+(on?'<p class="mut" style="margin-top:10px" role="status">Aktif. Pengingat berikutnya dalam <b id="rcount">...</b></p>':'')+
+'<p class="mut" style="margin-top:8px">Notifikasi browser: '+(perm=='granted'?'diizinkan':perm=='denied'?'diblokir (banner tetap muncul)':perm=='default'?'belum diminta':'tidak tersedia di perangkat ini (banner tetap muncul)')+'</p>'+
+'<div class="row" style="margin-top:12px"><button class="btn alt" data-act="rtest">Tes sekarang</button><button class="btn" data-act="remind">'+(on?'Matikan pengingat':'Aktifkan pengingat')+'</button></div></div>'}
+var rem={m:120,next:0,tm:null};
+function beep(){try{var C=window.AudioContext||window.webkitAudioContext,c=new C(),o=c.createOscillator();o.connect(c.destination);o.frequency.value=880;o.start();setTimeout(function(){o.stop();c.close()},250)}catch(e){}}
+function banner(m){var o=document.querySelector('.brk');if(o)o.remove();var d=document.createElement('div');d.className='brk';d.setAttribute('role','alert');d.innerHTML='<span>'+m+'</span><button data-act="dismiss">Oke</button>';document.body.appendChild(d)}
+function notifyBreak(){var m='Waktunya istirahat sejenak. Minum air dan regangkan badan.';banner(m);try{if('Notification' in window&&Notification.permission=='granted')new Notification('Shiftwise',{body:m})}catch(e){}try{if(navigator.vibrate)navigator.vibrate([200,100,200])}catch(e){}beep()}
+function tick(){if(!rem.tm)return;var left=rem.next-Date.now();if(left<=0){notifyBreak();rem.next=Date.now()+rem.m*60000;left=rem.m*60000}var el=document.getElementById('rcount');if(el){var s=Math.ceil(left/1000);el.textContent=Math.floor(s/60)+' menit '+('0'+s%60).slice(-2)+' detik'}}
+function remind(){if(rem.tm){clearInterval(rem.tm);rem.tm=null;toast('Pengingat dimatikan');return render('info')}
+rem.m=+document.getElementById('rm').value;rem.next=Date.now()+rem.m*60000;rem.tm=setInterval(tick,1000);
+try{if('Notification' in window&&Notification.permission=='default'){var r=Notification.requestPermission(function(){});if(r&&r.then)r.then(function(){if(cur_v=='info')render('info')})}}catch(e){}
+toast('Pengingat aktif');render('info');tick()}
+function csv(){var r=['Tanggal,Jadwal,Durasi,Jeda,Malam,Kelelahan,Skor,Terbaik'];H.forEach(function(h){h.items.forEach(function(i){r.push([new Date(h.t).toISOString(),'"'+i.name.replace(/"/g,'""')+'"',i.dur,i.gap,i.night,i.fat,i.score,i.name==h.best.name?'ya':'tidak'].join(','))})});
+var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([r.join('\n')],{type:'text/csv'}));a.download='laporan-shiftwise.csv';a.click()}
+
+document.addEventListener('click',function(e){var t=e.target.closest('[data-go],[data-act],[data-del],[data-open],[data-tab],[data-info]');if(!t)return;
+if(t.dataset.go)return render(t.dataset.go);
+if(t.dataset.info!==undefined){infoOpen=+t.dataset.info;return render('info')}
+if(t.dataset.tab){tab=t.dataset.tab;return render('riwayat')}
+if(t.dataset.open!==undefined){cur=H[+t.dataset.open];return render('hasil')}
+if(t.dataset.del!==undefined){alts.splice(+t.dataset.del,1);return render('input')}
+var a=t.dataset.act;
+if(a=='reset')return render('input');
+if(a=='add'){var n=document.getElementById('f-name').value.trim();if(!n){toast('Isi nama jadwal terlebih dahulu');return document.getElementById('f-name').focus()}
+alts.push({name:n,dur:+document.getElementById('f-dur').value,gap:+document.getElementById('f-gap').value,night:+document.getElementById('f-night').value,fat:+document.getElementById('f-fat').value});toast('Jadwal disimpan');return render('input')}
+if(a=='run'){var items=alts.map(function(x){return{name:x.name,dur:x.dur,gap:x.gap,night:x.night,fat:x.fat,score:score(x)}});
+var best=items.reduce(function(m,i){return i.score<m.score?i:m},items[0]);cur={t:Date.now(),items:items,best:best};H.unshift(cur);H=H.slice(0,50);save();alts=[];return render('hasil')}
+if(a=='advise'){var g=function(i){return +document.getElementById(i).value},s=g('a-sleep'),k=g('a-sl'),n=g('a-next');adv={s:s,k:k,n:n,m:buildAdvice(s,k,n)};return render('info')}
+if(a=='theme'){var nd=isDark()?'light':'dark';document.documentElement.setAttribute('data-theme',nd);try{localStorage.setItem('shiftwise.theme',nd)}catch(e){}t.textContent=isDark()?'☀ Terang':'☾ Gelap';t.setAttribute('aria-label','Ganti ke mode '+(isDark()?'terang':'gelap'));return}
+if(a=='print')return window.print();
+if(a=='csv')return csv();
+if(a=='clear'){if(confirm('Hapus semua riwayat analisis?')){H=[];save();render('riwayat')}return}
+if(a=='remind')return remind();
+if(a=='rtest')return notifyBreak();
+if(a=='dismiss'){var bk=document.querySelector('.brk');if(bk)bk.remove();return}
+if(a=='menu'){var nv=document.getElementById('nav'),o=nv.classList.toggle('open');t.setAttribute('aria-expanded',o);return}});
+try{var th=localStorage.getItem('shiftwise.theme');if(th)document.documentElement.setAttribute('data-theme',th)}catch(e){}
+render('splash');
+</script>
+</body>
+</html>
